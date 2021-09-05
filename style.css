@@ -1,0 +1,45 @@
+.sample {
+  border:black; 
+  border-width:3px; 
+  border-style:outset;
+  inline-size: 50vmin;
+  block-size: 35vmin;
+  background: linear-gradient(
+    to bottom right, 
+    hsl(180, 100%, 61%), 
+    hsl(166, 100%, 61%),
+    hsl(146, 100%, 61%)
+  );
+  border-radius: 1rem;
+  position: relative;
+}
+
+.sample::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right, 
+    hsl(180, 100%, 40%), 
+    hsl(166, 100%, 40%),
+    hsl(146, 100%, 40%)
+  );
+  z-index: -1;
+  transform: translateY(15%) scale(1.2);
+  filter: blur(120px);
+}
+
+html {
+  block-size: 100%;
+}
+
+body {
+  background:black;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  font-family: system-ui, sans-serif;
+}
